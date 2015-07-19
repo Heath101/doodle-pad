@@ -14,19 +14,24 @@ window.requestAnimFrame = (function(callback) {
 })();
 
 var statsEl = document.getElementById('stats');
-
 var canvas = document.getElementById('drawingArea');
 var context = canvas.getContext('2d');
-var radius = 10;
+
+var lastMousePosX
+var lastMousePosY
+var radius = 50;
+var currentColor = '#0000ff'
 
 
 function drawShape(x, y, context) {
   context.beginPath();
-  context.arc(x, y, radius, 0, 2 * Math.PI, false);
-  context.fillStyle = 'green';
-  context.fill();
+  context.moveTo(lastMousePosX, lastMousePosY);
+  context.lineTo(x, y);
+  context.lineWidth = radius;
+  context.strokeStyle = currentColor;
+  context.lineCap = 'round';
+  context.stroke();
 }
-
 
 canvas.addEventListener('mousemove', function(evt) {
   var mousePos = getMousePos(canvas, evt);
@@ -34,4 +39,14 @@ canvas.addEventListener('mousemove', function(evt) {
   if (evt.which == 1) {
     drawShape(mousePos.x, mousePos.y, context)
   }
+  lastMousePosX = mousePos.x
+  lastMousePosY = mousePos.y
+
 }, false);
+
+document.getElementById('increaseRadius').addEventListener('click', function() { radius += 5 })
+document.getElementById('decreaseRadius').addEventListener('click', function() { 
+  if (radius > 5) {
+    radius -= 5
+  }
+})

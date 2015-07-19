@@ -1,11 +1,11 @@
 body {
-  font-family: 'Gloria Hallelujah', cursive;
   margin: 0px;
   padding: 0px;
   background-color: #ddd;
 }
 
 header {
+  font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
 }
 
@@ -32,7 +32,5 @@ header h1 {
 }
 
 #stats {
-/*  position: fixed;
-  bottom: 50%;
-  right: 0;*/
+
 }

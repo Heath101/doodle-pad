@@ -17,7 +17,7 @@ var statsEl = document.getElementById('stats');
 
 var canvas = document.getElementById('drawingArea');
 var context = canvas.getContext('2d');
-var radius = 70;
+var radius = 10;
 
 
 function drawShape(x, y, context) {
@@ -25,15 +25,13 @@ function drawShape(x, y, context) {
   context.arc(x, y, radius, 0, 2 * Math.PI, false);
   context.fillStyle = 'green';
   context.fill();
-  context.lineWidth = 5;
-  context.strokeStyle = '#003300';
-  context.stroke();
 }
-
 
 
 canvas.addEventListener('mousemove', function(evt) {
   var mousePos = getMousePos(canvas, evt);
   statsEl.innerHTML = mousePos.x + ',' + mousePos.y;
-  drawShape(mousePos.x, mousePos.y, context)
+  if (evt.which == 1) {
+    drawShape(mousePos.x, mousePos.y, context)
+  }
 }, false);

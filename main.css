@@ -17,7 +17,7 @@ header h1 {
 
 }
 
-#artCanvas {
+.canvas {
   border: 10px solid #ccc;
   display: inline-block;
   position: fixed;
@@ -29,4 +29,10 @@ header h1 {
   height: 1000px;
   margin: auto;
   background-color: white;
+}
+
+#stats {
+/*  position: fixed;
+  bottom: 50%;
+  right: 0;*/
 }

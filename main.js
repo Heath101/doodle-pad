@@ -13,9 +13,10 @@ window.requestAnimFrame = (function(callback) {
   };
 })();
 
-var statsEl = document.getElementById('stats');
-var canvas = document.getElementById('drawingArea');
-var context = canvas.getContext('2d');
+var statsEl  = document.getElementById('stats');
+var radiusEl = document.getElementById('radiusValue')
+var canvas   = document.getElementById('drawingArea');
+var context  = canvas.getContext('2d');
 
 var lastMousePosX
 var lastMousePosY
@@ -44,9 +45,13 @@ canvas.addEventListener('mousemove', function(evt) {
 
 }, false);
 
-document.getElementById('increaseRadius').addEventListener('click', function() { radius += 5 })
+document.getElementById('increaseRadius').addEventListener('click', function() { 
+  radius += 5
+  radiusEl.innerHTML = radius
+})
 document.getElementById('decreaseRadius').addEventListener('click', function() { 
   if (radius > 5) {
     radius -= 5
+    radiusEl.innerHTML = radius
   }
 })

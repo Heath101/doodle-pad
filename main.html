@@ -6,17 +6,26 @@
     <link rel="stylesheet" type="text/css" href="buttons.css">
   </head>
   <body>
-    <header>
-      <h1>Raleighs Art</h1>
-    </header>
-      <div id="stats"></div>
-    <div class='canvas'>
-      <canvas id="drawingArea" width="1500" height="1000"></canvas>
-      <div class="buttonHolder">
-        <a href="#" class="button plus" id="increaseRadius"></a>
-        <a href="#" class="button minus" id="decreaseRadius"></a>
+    <div class='outer-container'>
+      <header>
+        <h1>Doodle Art</h1>
+      </header>
+      <div class=-"canvas-container">
+      <div class='canvas'>
+        <canvas id="drawingArea" width="1200" height="800"></canvas>
+      </div>
       </div>
     </div>
+      <div class='tools'>
+        <div id='stats'></div>
+        <div class='tool'>
+          <h2>Size Adjust</h2>
+          <div class="buttonHolder">
+            <a href="#" class="button plus" id="increaseRadius"></a>
+            <a href="#" class="button minus" id="decreaseRadius"></a>
+          </div>
+        </div>
+      </div>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>      

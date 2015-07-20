@@ -7,6 +7,7 @@ body {
 header {
   font-family: 'Gloria Hallelujah', cursive;
   text-align: center;
+  height: 120px;
 }
 
 header h1 {
@@ -17,20 +18,29 @@ header h1 {
 
 }
 
+.canvas-container {
+  width: 100%;
+}
+
 .canvas {
   border: 10px solid #ccc;
-  display: inline-block;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 1500px;
-  height: 1000px;
-  margin: auto;
+  width: 1200px;
+  height: 800px;
+  margin: 0 auto;
   background-color: white;
 }
 
 #stats {
 
+}
+
+.tools {
+  display: block;
+}
+
+.tool {
+  background-color: red;
+  width: 200px;
+  text-align: center;
+  padding: 0 1em;
 }

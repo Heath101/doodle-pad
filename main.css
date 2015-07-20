@@ -18,20 +18,22 @@ header h1 {
 
 }
 
-.canvas-container {
+.doodle-art {
   width: 100%;
+}
+
+.centered-container {
+  width: 1200px;
+  margin: 0 auto;
+  
 }
 
 .canvas {
   border: 10px solid #ccc;
   width: 1200px;
   height: 800px;
-  margin: 0 auto;
   background-color: white;
-}
-
-#stats {
-
+  margin-bottom: 30px;
 }
 
 .tools {
@@ -39,8 +41,17 @@ header h1 {
 }
 
 .tool {
-  background-color: red;
+  background-color: #ddd;
+  border: 10px solid #ccc;
   width: 200px;
+  height: auto;
   text-align: center;
-  padding: 0 1em;
+  padding: 0 1em 1em 1em;
+  position: absolute;
+
+}
+
+.tool__buttons {
+  font-size: 1em;
+  padding: 0 20px;
 }

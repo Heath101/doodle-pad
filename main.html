@@ -10,21 +10,23 @@
       <header>
         <h1>Doodle Art</h1>
       </header>
-      <div class=-"canvas-container">
-      <div class='canvas'>
-        <canvas id="drawingArea" width="1200" height="800"></canvas>
-      </div>
-      </div>
-    </div>
-      <div class='tools'>
-        <div id='stats'></div>
-        <div class='tool'>
-          <h2>Size Adjust</h2>
-          <div class="buttonHolder">
-            <a href="#" class="button plus" id="increaseRadius"></a>
-            <a href="#" class="button minus" id="decreaseRadius"></a>
+      <div class="doodle-art centered-container">
+        <div class='canvas'>
+          <canvas id="drawingArea" width="1200" height="800"></canvas>
+        </div>
+        <div class='tools'>
+          <div id='stats'></div>
+          <div class='tool'>
+            <div class='tool__title'>
+              <h2>Size Adjust</h2>
+            </div>
+            <div class="tool__buttons">
+              <a href="#" class="button plus" id="increaseRadius"></a>
+              <a href="#" class="button minus" id="decreaseRadius"></a>
+            </div>
           </div>
         </div>
+      </div>
       </div>
     <script type="text/javascript" src="main.js"></script>
   </body>

@@ -21,7 +21,7 @@ var context  = canvas.getContext('2d');
 var lastMousePosX
 var lastMousePosY
 var radius = 50;
-var currentColor = '#0000ff'
+var currentColor = '#00aaff'
 
 
 function drawShape(x, y, context) {

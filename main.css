@@ -93,3 +93,9 @@ header h1 {
   border: 1px solid #aaa;
   float: left;
 }
+
+.current-color {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}

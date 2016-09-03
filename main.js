@@ -23,7 +23,7 @@ var ctx2  = layer2.getContext('2d');
 var lastMousePosX
 var lastMousePosY
 var radius = 40;
-var currentColor = '#00aaff'
+var currentColor = 'red'
 
 
 function drawShape(x, y, context) {
@@ -84,6 +84,7 @@ for(i=0; i < boxes.length; i++) {
   var colorBox = boxes[i]
   colorBox.addEventListener('click', function(e) {
     currentColor = this.getAttribute('data-color')
+    document.getElementById('currentColor').style.background = currentColor;
   })
 }
 

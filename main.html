@@ -11,8 +11,9 @@
         <h1>Doodle Art</h1>
       </header>
       <div class="doodle-art centered-container">
-        <div class='canvas'>
-          <canvas id="drawingArea" width="1200" height="800"></canvas>
+        <div id='canvasContain'>
+          <canvas id="layer1" width="1200" height="800"></canvas>
+          <canvas id="layer2" width="1200" height="800"></canvas>
         </div>
         <div class='tools'>
           <div id='stats'></div>
@@ -43,8 +44,13 @@
               <h2>Clear Doodle Pad</h2>
             </div>
             <div class="tool__buttons">
-              <a href="#" class="button" id="clearScreen"></a>
+              <a href="#" class="button ex" id="clearScreen"></a>
             </div>
+          </div>
+
+          <div class="tool">
+            <a id="save" download="doodle-pad-pic.jpg">
+              <button type="button" name="button">Save</button></a>
           </div>
         </div>
       </div>

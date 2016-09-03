@@ -15,8 +15,10 @@ window.requestAnimFrame = (function(callback) {
 
 var statsEl  = document.getElementById('stats');
 var radiusEl = document.getElementById('radiusValue')
-var canvas   = document.getElementById('drawingArea');
-var context  = canvas.getContext('2d');
+var layer1   = document.getElementById('layer1');
+var ctx1  = layer1.getContext('2d');
+var layer2   = document.getElementById('layer2');
+var ctx2  = layer2.getContext('2d');
 
 var lastMousePosX
 var lastMousePosY
@@ -35,18 +37,23 @@ function drawShape(x, y, context) {
 }
 
 function drawBrush(x, y, context) {
-  // context.arc(x,y, radius, 0, 2 * Math.PI, false);
-  // context.stroke();
+  context.clearRect(0, 0, 1200, 800)
+  context.beginPath();
+  context.arc(x,y, radius/2, 0, 2 * Math.PI, false);
+  context.lineWidth = 1;
+  context.strokeStyle = '#333';
+  context.stroke();
 }
 
-canvas.addEventListener('mousemove', function(evt) {
-  var mousePos = getMousePos(canvas, evt);
+document.getElementById('canvasContain').addEventListener('mousemove', function(evt) {
+  var mousePos = getMousePos(layer1, evt);
   statsEl.innerHTML = mousePos.x + ',' + mousePos.y;
 
   if (evt.which == 1) {
-    drawShape(mousePos.x, mousePos.y, context)
+    ctx2.clearRect(0, 0, 1200, 800)
+    drawShape(mousePos.x, mousePos.y, ctx1)
   } else {
-    drawBrush(mousePos.x, mousePos.y, context)
+    drawBrush(mousePos.x, mousePos.y, ctx2)
   }
 
   lastMousePosX = mousePos.x
@@ -68,7 +75,7 @@ document.getElementById('decreaseRadius').addEventListener('click', function() {
 
 // Clear screen
 document.getElementById('clearScreen').addEventListener('click', function() {
-  context.clearRect(0,0,1200,800)
+  ctx1.clearRect(0,0,1200,800)
 })
 
 // Color Boxes
@@ -79,3 +86,9 @@ for(i=0; i < boxes.length; i++) {
     currentColor = this.getAttribute('data-color')
   })
 }
+
+function download() {
+    var dt = layer1.toDataURL('image/jpeg');
+    this.href = dt;
+};
+document.getElementById('save').addEventListener('click', download, false);

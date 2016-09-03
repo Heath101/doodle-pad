@@ -28,13 +28,38 @@ header h1 {
 
 }
 
-.canvas {
+#canvasContain {
   border: 10px solid #ccc;
   width: 1200px;
   height: 800px;
-  background-color: white;
+  /*background-color: white;*/
   margin-bottom: 30px;
-  cursor: pointer;
+  cursor: none;
+  position: relative;
+}
+
+#layer1,
+#layer2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#layer1 {
+  position: absolute;
+  background-color: white;
+  z-index: 2;
+  border: 1px solid red;
+  top: 0px;
+  left: 0px;
+}
+
+#layer2 {
+  /*position: absolute;*/
+  z-index: 3;
+  border: 1px solid blue;
+  top: 0px;
+  left: 0px;
 }
 
 .tools {

@@ -1,6 +1,8 @@
 require('./css/style.css');
 require('./css/button.css');
 
+require('./js/shims.js');
+
 function getMousePos(canvas, evt) {
   var rect = canvas.getBoundingClientRect();
   return {
@@ -9,12 +11,6 @@ function getMousePos(canvas, evt) {
   };
 }
 
-window.requestAnimFrame = (function(callback) {
-  return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
-  function(callback) {
-    window.setTimeout(callback, 1000 / 60);
-  };
-})();
 
 var statsEl  = document.getElementById('stats');
 var radiusEl = document.getElementById('radiusValue')

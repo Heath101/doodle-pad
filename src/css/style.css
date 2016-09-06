@@ -1,3 +1,7 @@
+html {
+  cursor: pointer;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -32,7 +36,6 @@ header h1 {
   border: 10px solid #ccc;
   width: 1200px;
   height: 800px;
-  /*background-color: white;*/
   margin-bottom: 30px;
   cursor: none;
   position: relative;
@@ -46,20 +49,12 @@ header h1 {
 }
 
 #layer1 {
-  position: absolute;
   background-color: white;
   z-index: 2;
-  border: 1px solid red;
-  top: 0px;
-  left: 0px;
 }
 
 #layer2 {
-  /*position: absolute;*/
   z-index: 3;
-  border: 1px solid blue;
-  top: 0px;
-  left: 0px;
 }
 
 .tools {

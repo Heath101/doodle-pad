@@ -4,9 +4,16 @@ var webpack = require('webpack');
 module.exports = {
   context: __dirname,
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./src/js/client.js",
+  entry: "./src/app.js",
   module: {
     loaders: [
+      {
+        test: /\.css$/, loader: 'style!css'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      },
       {
         test: /\.js?$/,
         exclude: /(node_modules|bower_components)/,
@@ -19,7 +26,7 @@ module.exports = {
     ]
   },
   output: {
-    path: __dirname + "/src/",
+    path: __dirname + "/dist/",
     filename: "client.min.js"
   },
   plugins: debug ? [] : [

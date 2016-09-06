@@ -1,3 +1,6 @@
+require('./css/style.css');
+require('./css/button.css');
+
 function getMousePos(canvas, evt) {
   var rect = canvas.getBoundingClientRect();
   return {
@@ -80,6 +83,7 @@ document.getElementById('clearScreen').addEventListener('click', function() {
 
 // Color Boxes
 var boxes = document.getElementsByClassName('color-box')
+var i = null
 for(i=0; i < boxes.length; i++) {
   var colorBox = boxes[i]
   colorBox.addEventListener('click', function(e) {
